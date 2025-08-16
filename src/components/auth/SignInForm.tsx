@@ -31,65 +31,67 @@ export default function SignInForm() {
   };
 
   return (
-    <div className="flex flex-col flex-1">
-      <div className="w-full max-w-md pt-6 mx-auto">
+    <div className="relative">
+      {/* Logo Section */}
+      <div className="text-center mb-8">
+        <img 
+          src="/images/logo/logo.svg" 
+          alt="TailAdmin" 
+          className="mx-auto h-14 w-auto filter drop-shadow-sm"
+        />
       </div>
-      <div className="flex flex-col justify-center flex-1 w-full max-w-md mx-auto">
+
+      {/* Sign In Form */}
+      <form onSubmit={handleSubmit} className="space-y-6">
         <div>
-          <div className="mb-4">
-            <h1 className="mb-1 font-semibold text-gray-800 text-title-sm">
-              Sign In
-            </h1>
-          </div>
-          <div>
-            <form onSubmit={handleSubmit}>
-              <div className="space-y-4">
-                <div>
-                  <Label>
-                    Username
-                  </Label>
-                  <Input
-                    placeholder="test"
-                    value={username}
-                    onChange={(e) => setUsername(e.target.value)}
-                  />
-                </div>
-                <div>
-                  <Label>
-                    Password
-                  </Label>
-                  <div className="relative">
-                    <Input
-                      type={showPassword ? "text" : "password"}
-                      placeholder="test"
-                      value={password}
-                      onChange={(e) => setPassword(e.target.value)}
-                    />
-                    <span
-                      onClick={() => setShowPassword(!showPassword)}
-                      className="absolute z-30 -translate-y-1/2 cursor-pointer right-4 top-1/2"
-                    >
-                      {showPassword ? (
-                        <EyeIcon className="fill-gray-500 size-5" />
-                      ) : (
-                        <EyeCloseIcon className="fill-gray-500 size-5" />
-                      )}
-                    </span>
-                  </div>
-                </div>
-                {error ? (
-                  <div className="text-error-500 text-theme-xs">{error}</div>
-                ) : null}
-                <div>
-                  <Button className="w-full" size="sm" onClick={doSignIn}>
-                    Sign in
-                  </Button>
-                </div>
-              </div>
-            </form>
+          <Label>
+            Username
+          </Label>
+          <Input
+            placeholder="Enter your username"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+            className="mt-2 bg-white/50 border-gray-200/40 focus:border-blue-500 focus:ring-blue-500/20 backdrop-blur-sm"
+          />
+        </div>
+        
+        <div>
+          <Label>
+            Password
+          </Label>
+          <div className="relative mt-2">
+            <Input
+              type={showPassword ? "text" : "password"}
+              placeholder="Enter your password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              className="bg-white/50 border-gray-200/40 focus:border-blue-500 focus:ring-blue-500/20 backdrop-blur-sm pr-12"
+            />
+            <span
+              onClick={() => setShowPassword(!showPassword)}
+              className="absolute z-30 -translate-y-1/2 cursor-pointer right-4 top-1/2 hover:scale-110 transition-transform"
+            >
+              {showPassword ? (
+                <EyeIcon className="fill-gray-500 hover:fill-gray-700 size-5 transition-colors" />
+              ) : (
+                <EyeCloseIcon className="fill-gray-500 hover:fill-gray-700 size-5 transition-colors" />
+              )}
+            </span>
           </div>
         </div>
-      </div>
+
+        {error ? (
+          <div className="p-4 text-sm text-red-700 bg-red-50/60 border border-red-200/40 rounded-xl backdrop-blur-sm">
+            {error}
+          </div>
+        ) : null}
+
+        <div className="pt-2">
+          <Button className="w-full bg-gradient-to-r from-blue-600/90 to-indigo-600/90 hover:from-blue-700/95 hover:to-indigo-700/95 text-white font-semibold py-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-200 transform hover:-translate-y-0.5 backdrop-blur-sm" size="sm" onClick={doSignIn}>
+            Sign in
+          </Button>
+        </div>
+      </form>
     </div>
   );
 }
