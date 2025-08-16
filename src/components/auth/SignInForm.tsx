@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useLocation, useNavigate } from "react-router";
+import { useLocation, useNavigate, Location } from "react-router";
 
 export default function SignInForm() {
   const [showPassword, setShowPassword] = useState(false);
@@ -9,7 +9,7 @@ export default function SignInForm() {
   const [errorKey, setErrorKey] = useState(0); // Key to trigger animation on same error
   const [isMousePressed, setIsMousePressed] = useState(false);
   const navigate = useNavigate();
-  const location = useLocation() as any;
+  const location = useLocation() as Location & { state?: { from?: { pathname?: string } } };
   let from: string = location.state?.from?.pathname || "/ecommerce";
   if (from.startsWith("/signin")) from = "/ecommerce";
 
@@ -102,7 +102,7 @@ export default function SignInForm() {
             placeholder="Username"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
-            className="w-full pl-12 pr-4 py-4 bg-white/20 backdrop-blur-sm border border-black/10 rounded-xl text-white placeholder-white/25 focus:outline-none focus:ring-2 focus:ring-white/100 focus:border-transparent transition-all duration-200"
+            className="w-full pl-12 pr-4 py-4 bg-white/20 backdrop-blur-sm border border-black/10 rounded-xl text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-white/100 focus:border-transparent transition-all duration-200"
           />
         </div>
 
@@ -118,22 +118,22 @@ export default function SignInForm() {
             placeholder="Password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            className="w-full pl-12 pr-12 py-4 bg-white/20 backdrop-blur-sm border border-black/10 rounded-xl text-white placeholder-white/25 focus:outline-none focus:ring-2 focus:ring-white/100 focus:border-transparent transition-all duration-200"
+            className="w-full pl-12 pr-12 py-4 bg-white/20 backdrop-blur-sm border border-black/10 rounded-xl text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-white/100 focus:border-transparent transition-all duration-200"
           />
             <button
               type="button"
               onMouseDown={handleMouseDown}
               onMouseUp={handleMouseUp}
               onMouseLeave={handleMouseLeave}
-              className="absolute inset-y-0 right-0 pr-4 flex items-center z-10 focus:outline-none focus:ring-2 focus:ring-white/100 focus:border-transparent"
+              className="absolute inset-y-0 right-0 pr-4 flex items-center z-10 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/100 focus-visible:border-transparent"
             >
               {!showPassword ? (
-                <svg className="h-5 w-5 text-white hover:text-white/80 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="h-5 w-5 text-white/70 hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
                 </svg>
               ) : (
-                <svg className="h-5 w-5 text-white hover:text-white/80 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="h-5 w-5 text-white/70 hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M9.878 9.878l4.242 4.242M9.878 9.878L3 3m6.878 6.878L12 12m6.121-6.121L21 3m-6.879 6.879L12 12m-3.879-3.879l4.242 4.242M21 21l-5.315-5.315" />
                 </svg>
               )}
@@ -159,7 +159,7 @@ export default function SignInForm() {
         <div className="-mt-1">
           <button
             type="submit"
-            className="w-full py-2 bg-blue-500 hover:bg-blue-600 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-200 transform hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-white/100 focus:border-transparent"
+            className="w-full py-2 bg-blue-400 hover:bg-white text-white hover:text-blue-400 font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/100 focus-visible:border-transparent"
           >
             LOGIN
           </button>
@@ -169,7 +169,7 @@ export default function SignInForm() {
         <div className="-mt-3">
           <button
             type="button"
-            className="text-white/20 hover:text-white text-sm transition-colors focus:outline-none focus:ring-2 focus:ring-white/100 focus:border-transparent"
+            className="text-white/40 hover:text-white text-sm transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-white/100 focus-visible:border-transparent"
           >
             Forgot your password?
           </button>
