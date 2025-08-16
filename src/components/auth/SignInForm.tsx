@@ -6,6 +6,7 @@ export default function SignInForm() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState<string | null>(null);
+  const [errorKey, setErrorKey] = useState(0); // Key to trigger animation on same error
   const [isMousePressed, setIsMousePressed] = useState(false);
   const navigate = useNavigate();
   const location = useLocation() as any;
@@ -19,6 +20,7 @@ export default function SignInForm() {
       navigate(from, { replace: true });
     } else {
       setError("Invalid credentials");
+      setErrorKey(prev => prev + 1); // Increment key to trigger animation
     }
   };
 
@@ -60,7 +62,23 @@ export default function SignInForm() {
   };
 
   return (
-    <div className="text-center">
+    <>
+      <style>{`
+        @keyframes vibrate {
+          0% { transform: translateX(0); }
+          10% { transform: translateX(-2px); }
+          20% { transform: translateX(2px); }
+          30% { transform: translateX(-2px); }
+          40% { transform: translateX(2px); }
+          50% { transform: translateX(-1px); }
+          60% { transform: translateX(1px); }
+          70% { transform: translateX(-1px); }
+          80% { transform: translateX(1px); }
+          90% { transform: translateX(-0.5px); }
+          100% { transform: translateX(0); }
+        }
+      `}</style>
+      <div className="text-center">
       {/* Logo Section */}
       <div className="mb-12">
         <img 
@@ -122,10 +140,16 @@ export default function SignInForm() {
             </button>
         </div>
 
-        {/* Fixed height error message area - minimal spacing */}
+        {/* Fixed height error message area - minimal spacing with subtle vibration */}
         <div className="h-3 -mt-4">
           {error && (
-            <div className="text-red-400 text-sm font-medium">
+            <div 
+              key={errorKey}
+              className="text-red-400 text-sm font-medium"
+              style={{
+                animation: 'vibrate 0.5s ease-in-out'
+              }}
+            >
               {error}
             </div>
           )}
@@ -152,5 +176,6 @@ export default function SignInForm() {
         </div>
       </form>
     </div>
+    </>
   );
 }
