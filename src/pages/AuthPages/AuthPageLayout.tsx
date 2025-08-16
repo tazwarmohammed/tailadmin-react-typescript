@@ -6,14 +6,27 @@ export default function AuthLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="relative flex items-center justify-center w-full min-h-screen bg-gradient-to-br from-blue-600 via-blue-700 to-indigo-800">
-      {/* Subtle pattern overlay matching the screenshot */}
+    <div className="relative flex items-center justify-center w-full min-h-screen h-screen overflow-hidden">
+      {/* Background image - showing original lighter appearance */}
       <div 
-        className="absolute inset-0 opacity-20"
+        className="absolute inset-0"
         style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Ctext x='20' y='30' font-family='Arial' font-size='14' transform='rotate(-45 20 30)'%3ETailAdmin%3C/text%3E%3Ctext x='60' y='70' font-family='Arial' font-size='14' transform='rotate(-45 60 70)'%3ETailAdmin%3C/text%3E%3C/g%3E%3C/svg%3E")`
+          // backgroundImage: `url("/light-blue-curve.jpg")`,
+          // backgroundImage: `url("/block-image-blue.jpg")`,
+          // backgroundImage: `url("/dark-blue-curve.jpg")`,
+          // backgroundImage: `url("/blue-yellow-wave.jpg")`,
+          // backgroundImage: `url("/blue-boxed.jpg")`,
+          backgroundImage: `url("/abstract-grainy-texture-background.jpg")`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+          minHeight: '100vh',
+          width: '100vw'
         }}
       />
+      
+      {/* Very subtle overlay to maintain contrast for the form */}
+      <div className="absolute inset-0 bg-black/5"></div>
       
       {/* Content Container */}
       <div className="relative z-10 w-full max-w-sm px-6">

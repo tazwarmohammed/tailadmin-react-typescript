@@ -18,7 +18,7 @@ export default function SignInForm() {
       setError(null);
       navigate(from, { replace: true });
     } else {
-      setError("Invalid credentials. Use test / test for development.");
+      setError("Invalid credentials");
     }
   };
 
@@ -107,7 +107,7 @@ export default function SignInForm() {
               onMouseDown={handleMouseDown}
               onMouseUp={handleMouseUp}
               onMouseLeave={handleMouseLeave}
-              className="absolute inset-y-0 right-0 pr-4 flex items-center z-10"
+              className="absolute inset-y-0 right-0 pr-4 flex items-center z-10 focus:outline-none focus:ring-2 focus:ring-white/100 focus:border-transparent"
             >
               {!showPassword ? (
                 <svg className="h-5 w-5 text-white hover:text-white/80 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -122,28 +122,30 @@ export default function SignInForm() {
             </button>
         </div>
 
-        {/* Error Message - positioned directly below password field */}
-        {error && (
-          <div className="text-red-400 text-sm font-medium" style={{ marginBottom: '0px' }}>
-            {error}
-          </div>
-        )}
+        {/* Fixed height error message area - minimal spacing */}
+        <div className="h-3 -mt-4">
+          {error && (
+            <div className="text-red-400 text-sm font-medium">
+              {error}
+            </div>
+          )}
+        </div>
 
-        {/* Login Button */}
-        <div className="pt-4">
+        {/* Login Button - minimal gap from password field */}
+        <div className="-mt-1">
           <button
             type="submit"
-            className="w-full py-4 bg-blue-500 hover:bg-blue-600 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-200 transform hover:-translate-y-0.5"
+            className="w-full py-2 bg-blue-500 hover:bg-blue-600 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-200 transform hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-white/100 focus:border-transparent"
           >
             LOGIN
           </button>
         </div>
 
-        {/* Forgot Password */}
-        <div>
+        {/* Forgot Password - minimal gap from login button */}
+        <div className="-mt-3">
           <button
             type="button"
-            className="text-white/20 hover:text-white text-sm transition-colors"
+            className="text-white/20 hover:text-white text-sm transition-colors focus:outline-none focus:ring-2 focus:ring-white/100 focus:border-transparent"
           >
             Forgot your password?
           </button>
