@@ -89,7 +89,7 @@ export default function UserDropdown() {
               to="/profile"
               className="flex items-center gap-2 px-2 py-1 font-normal text-gray-700 rounded-lg group text-theme-xs hover:bg-gray-100 hover:text-gray-700"
             >
-              <svg  xmlns="http://www.w3.org/2000/svg"  width={14}  height={14}  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  strokeWidth={2}  strokeLinecap="round"  strokeLinejoin="round"  className="icon icon-tabler icons-tabler-outline icon-tabler-lock-password"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 13a2 2 0 0 1 2 -2h10a2 2 0 0 1 2 2v6a2 2 0 0 1 -2 2h-10a2 2 0 0 1 -2 -2z" /><path d="M8 11v-4a4 4 0 1 1 8 0v4" /><path d="M15 16h.01" /><path d="M12.01 16h.01" /><path d="M9.02 16h.01" /></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width={14} height={14} viewBox="0 0 100 100" fill="#000000"><path fill="#000000" d="M82.105 44.218h-8.858v-8.431c.003-.036.003-.071.003-.102c0-13.073-10.636-23.71-23.713-23.71c-13.073 0-23.71 10.637-23.71 23.71v8.533h-7.931a2.62 2.62 0 0 0-2.621 2.621v38.565a2.62 2.62 0 0 0 2.621 2.621h64.21a2.62 2.62 0 0 0 2.621-2.621V46.839a2.621 2.621 0 0 0-2.622-2.621zm-42.314-8.533c0-5.375 4.371-9.741 9.746-9.741c5.341 0 9.695 4.32 9.747 9.649l-.003.031h.003v8.594H39.791v-8.533z"/></svg>
               Change password
             </DropdownItem>
           </li>
