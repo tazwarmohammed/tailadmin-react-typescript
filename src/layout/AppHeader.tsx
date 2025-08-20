@@ -31,14 +31,14 @@ const AppHeader: React.FC = () => {
 
   return (
     <header className="sticky top-0 z-99999 flex w-full bg-white border-b border-gray-200">
-      <div className="flex items-center justify-between w-full gap-2 px-2.5 py-2 sm:gap-2.5 lg:px-3">
+      <div className="flex items-center w-full gap-2 px-2.5 py-2 sm:gap-2.5 lg:px-3">
         <div className="flex items-center gap-1.5 shrink-0">
           <Link to="/ecommerce" className="inline-flex items-center">
-            <img src="/images/logo/logo.svg" alt="Logo" height={24} />
+            <img src="/images/logo/logo.svg" alt="Logo" height={24} style={{ marginRight: '1rem' }} />
           </Link>
         </div>
 
-        <nav className="hidden md:flex items-center gap-2.5 text-theme-xs">
+        <nav className="hidden md:flex items-center gap-2.5 text-theme-xs flex-1">
           {[...mainNavItems, ...otherNavItems].map((item) => {
             const parentActive = item.path
               ? isActive(item.path)
@@ -100,7 +100,7 @@ const AppHeader: React.FC = () => {
           })}
         </nav>
 
-        <div className="flex items-center gap-1.5">
+        <div className="flex items-center gap-1.5 ml-auto">
           {/* Layout Toggle Button */}
           <button
             onClick={toggleOrientation}
