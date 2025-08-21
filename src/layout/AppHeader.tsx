@@ -35,7 +35,7 @@ const AppHeader: React.FC = () => {
         <div className="flex items-center gap-1.5 shrink-0">
           <Link to="/ecommerce" className="inline-flex items-center">
             {/* <img src="/images/logo/logo.svg" alt="Logo" height={24} style={{ marginRight: '1rem' }} /> */}
-            <img src="/images/logo/brac-bank-text-logo.svg" alt="Logo" height={14.58} width={174} style={{ marginRight: '1rem' }} />
+            <img src="/images/logo/brac-bank-text-logo.svg" alt="Logo" height={14.581} width={174.2} style={{ marginRight: '1rem' }} />
           </Link>
         </div>
 

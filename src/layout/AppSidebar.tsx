@@ -22,7 +22,7 @@ const AppSidebar: React.FC = () => {
       <div className="flex items-center gap-1.5 px-2.5 py-2 shrink-0 sm:gap-2.5 lg:px-3">
         <Link to="/ecommerce" className="inline-flex items-center">
           {/* <img src="/images/logo/logo.svg" alt="Logo" height={24} /> */}
-          <img src="/images/logo/brac-bank-text-logo.svg" alt="Logo" height={24} style={{ paddingTop: '0.5rem' }} />
+          <img src="/images/logo/brac-bank-text-logo.svg" alt="Logo" style={{ paddingTop: '0.5rem' }} />
         </Link>
       </div>
 
