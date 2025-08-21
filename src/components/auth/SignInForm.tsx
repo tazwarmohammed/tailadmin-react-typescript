@@ -95,7 +95,7 @@ export default function SignInForm() {
           <img
             src="/images/logo/brac-bank-text-logo.svg"
             alt="BRAC Bank Logo"
-            // className="mx-auto h-16 w-auto"
+            className="mx-auto w-auto max-w-[15rem]"
           />
         </div>
 
@@ -103,7 +103,7 @@ export default function SignInForm() {
         <div className="mb-10">
           <h2 className="text-xl font-semibold text-gray-800 whitespace-nowrap">
             {/* steelblue/goldenrod color good for this text */}
-            <span style={{ fontFamily: "Trebuchet MS", fontSize: "1.5rem", color: "goldenrod" }}>
+            <span style={{ fontFamily: "Trebuchet MS", fontSize: "1.4rem", color: "goldenrod" }}>
               RTGS iFlash Web Portal
             </span>
           </h2>
