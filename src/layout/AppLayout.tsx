@@ -17,7 +17,7 @@ const LayoutContent: React.FC = () => {
           <div className="flex-1 flex flex-col overflow-hidden">
             {/* Header for vertical layout - matches horizontal header styling */}
             <header className="sticky top-0 z-99999 flex w-full bg-white border-b border-gray-200">
-              <div className="flex items-center justify-end w-full gap-2 px-2.5 py-2 sm:gap-2.5 lg:px-3" style={{ height: '46px' }}>
+              <div className="flex items-center justify-end w-full gap-2 px-2.5 py-2 sm:gap-2.5 lg:px-3" style={{ height: '42.5px' }}>
                 <div className="flex items-center gap-1.5">
                   {/* Layout Toggle Button */}
                   <button

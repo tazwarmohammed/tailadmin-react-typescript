@@ -287,7 +287,7 @@ export default function TransactionView() {
   return (
     <div>
       <PageMeta
-        title="React.js Transaction view Dashboard | TailAdmin - Next.js Admin Dashboard Template"
+        title="iFLash | TailAdmin - Next.js Admin Dashboard Template"
         description="This is React.js Transaction view page for TailAdmin - React.js Tailwind CSS Admin Dashboard Template"
       />
       <PageBreadcrumb pageTitle="Transaction view" />
