@@ -33,8 +33,8 @@ export default function AuthLayout({
       <div className="relative z-10 w-full max-w-sm px-6">
         <div className="bg-white/10 backdrop-blur-2xl rounded-3xl shadow-2xl border border-white/20 overflow-hidden">
           {/* Glass morphism effect */}
-          <div className="absolute inset-0 bg-gradient-to-br from-white/15 to-transparent rounded-3xl"></div>
-          
+          <div className="absolute inset-0 bg-gradient-to-br from-white/15 to-transparent rounded-3xl" style={{ backgroundColor: 'aliceblue' }}></div>
+
           {/* Card content */}
           <div className="relative px-8 py-10">
             {children}
