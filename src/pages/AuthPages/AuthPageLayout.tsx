@@ -17,7 +17,9 @@ export default function AuthLayout({
           // backgroundImage: `url("/blue-yellow-wave.jpg")`,
           // backgroundImage: `url("/blue-boxed.jpg")`,
           // backgroundImage: `url("/abstract-grainy-texture-background.jpg")`,
-          backgroundImage: `url("/money-coin-bg.jpg")`,
+          // backgroundImage: `url("/money-coin-bg.jpg")`,
+          // backgroundImage: `url("/Copilot-bg.jpg")`, // Using Copilot-bg.jpg as the background
+          backgroundImage: `url("/perplexity-iflash-bg.jpg")`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat',
