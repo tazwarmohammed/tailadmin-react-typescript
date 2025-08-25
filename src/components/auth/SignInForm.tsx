@@ -63,6 +63,10 @@ export default function SignInForm() {
     }
   };
 
+  const handleForgotPassword = () => {
+    navigate("/forgot-password");
+  };
+
   return (
     <>
       <style>{`
@@ -116,7 +120,7 @@ export default function SignInForm() {
             <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
               <svg
                 className="h-5 w-5"
-                fill="#c3cfe2ff"
+                fill="#000000ff"
                 viewBox="0 0 20 20"
                 style={{
                   fill: "#374151 !important",
@@ -149,7 +153,7 @@ export default function SignInForm() {
                 width={20}
                 height={20}
                 viewBox="10 0 100 100"
-                fill="#374151"
+                fill="#000000ff"
                 style={
                   {
                     opacity: 1,
@@ -162,7 +166,7 @@ export default function SignInForm() {
                 }
               >
                 <path
-                  fill="#c3cfe2ff"
+                  fill="#000000ff"
                   d="M82.105 44.218h-8.858v-8.431c.003-.036.003-.071.003-.102c0-13.073-10.636-23.71-23.713-23.71c-13.073 0-23.71 10.637-23.71 23.71v8.533h-7.931a2.62 2.62 0 0 0-2.621 2.621v38.565a2.62 2.62 0 0 0 2.621 2.621h64.21a2.62 2.62 0 0 0 2.621-2.621V46.839a2.621 2.621 0 0 0-2.622-2.621zm-42.314-8.533c0-5.375 4.371-9.741 9.746-9.741c5.341 0 9.695 4.32 9.747 9.649l-.003.031h.003v8.594H39.791v-8.533z"
                 />
               </svg>
@@ -266,6 +270,7 @@ export default function SignInForm() {
           <div className="-mt-3">
             <button
               type="button"
+              onClick={handleForgotPassword}
               className="text-gray-300 hover:text-gray-800 text-sm transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:border-transparent"
             >
               Forgot your password?
